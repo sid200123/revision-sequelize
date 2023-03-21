@@ -1,0 +1,27 @@
+{
+  "name": "revision-sequelize",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js",
+    "migrate": "sequelize db:migrate",
+    "migrate-undo": "sequelize db:migrate:undo",
+    "migrate-status": "sequelize db:migrate:status",
+    "seeder-create": "sequelize seed:generate --name",
+    "seeder-run": "sequelize db:seed:all"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mysql2": "^3.2.0",
+    "nodemon": "^2.0.21",
+    "sequelize": "^6.29.3",
+    "sequelize-cli": "^6.6.0"
+  }
+}

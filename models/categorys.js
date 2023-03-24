@@ -7,11 +7,16 @@ module.exports = (sequelize, DataTypes) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-    static associate({ SubCategorys }) {
+    static associate({ SubCategorys, MultiSubCategorys }) {
       // define association here
       this.hasMany(SubCategorys, {
         foreignKey: "category_id",
         as: "subcategory",
+      });
+
+      this.hasMany(MultiSubCategorys, {
+        foreignKey: "sub_category_id",
+        as: "multicategory",
       });
     }
     toJSON() {

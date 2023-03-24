@@ -23,8 +23,18 @@ app.post("/add", async (req, resp) => {
 
 app.get("/get", async (req, resp) => {
   try {
+    // const category = await Categorys.findAll({
+    //   include: "subcategory",
+    // });
     const category = await Categorys.findAll({
-      include: "subcategory",
+      include: {
+        model: SubCategorys,
+        as: "subcategory",
+        include: {
+          model: MultiSubCategorys,
+          as: "multicategory",
+        },
+      },
     });
     resp.send(category);
   } catch (err) {

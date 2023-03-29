@@ -6,8 +6,10 @@ const {
   MultiSubCategorys,
 } = require("./models");
 const app = express();
+const cors = require("cors");
 const port = 2012;
 
+app.use(cors());
 app.use(express.json());
 
 // for categories
